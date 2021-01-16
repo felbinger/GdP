@@ -1,0 +1,39 @@
+plugins {
+    id 'application'
+    id 'com.github.spotbugs' version '4.6.0'
+}
+
+application {
+    mainClass.set('com.github.felbinger.javatemplate.App')
+}
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(15)
+        vendor = JvmVendorSpec.ADOPTOPENJDK
+        implementation = JvmImplementation.VENDOR_SPECIFIC
+    }
+}
+
+group 'com.github.felbinger'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation(platform('org.junit:junit-bom:5.7.0'))
+    testImplementation('org.junit.jupiter:junit-jupiter-api')
+    testImplementation('org.mockito:mockito-junit-jupiter:3.6.0')
+    testRuntimeOnly('org.junit.jupiter:junit-jupiter-engine')
+}
+
+test {
+    useJUnitPlatform()
+}
+
+// Linting
+apply(from: "${rootDir}/gradle/checkstyle.gradle")
+apply(from: "${rootDir}/gradle/spotbugs.gradle")
+apply(from: "${rootDir}/gradle/pmd.gradle")

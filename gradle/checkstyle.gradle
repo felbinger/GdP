@@ -1,0 +1,20 @@
+apply(plugin: 'checkstyle')
+
+def checkstyleDir = "${rootDir}/config/checkstyle"
+
+tasks.withType(Checkstyle) {
+    exclude('**/module-info.java')
+    ignoreFailures = true
+    reports {
+        xml.enabled(true)
+        html.enabled(true)
+    }
+}
+
+checkstyleMain {
+    configFile = file("${checkstyleDir}/main.xml")
+}
+
+checkstyleTest {
+    configFile = file("${checkstyleDir}/test.xml")
+}

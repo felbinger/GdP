@@ -1,0 +1,11 @@
+spotbugs {
+    ignoreFailures = true
+}
+spotbugsMain {
+    reports {
+        html {
+            enabled = true
+            destination = file("$buildDir/reports/spotbugs/main/spotbugs.html")
+        }
+    }
+}
