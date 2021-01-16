@@ -1,4 +1,4 @@
-package com.github.felbinger.javatemplate;
+package com.github.felbinger.gdp;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.AfterEach;

@@ -4,7 +4,7 @@ plugins {
 }
 
 application {
-    mainClass.set('com.github.felbinger.javatemplate.App')
+    mainClass.set('com.github.felbinger.gdp.App')
 }
 
 java {
@@ -20,6 +20,9 @@ version '1.0-SNAPSHOT'
 
 repositories {
     mavenCentral()
+    flatDir {
+        dirs 'libs'
+    }
 }
 
 dependencies {
@@ -27,6 +30,8 @@ dependencies {
     testImplementation('org.junit.jupiter:junit-jupiter-api')
     testImplementation('org.mockito:mockito-junit-jupiter:3.6.0')
     testRuntimeOnly('org.junit.jupiter:junit-jupiter-engine')
+
+    implementation(name: 'SimpleGraphicPanel')
 }
 
 test {

@@ -234,3 +234,6 @@ gradle-app.setting
 **/build/
 
 # End of https://www.toptal.com/developers/gitignore/api/linux,windows,macos,git,intellij+all,kotlin,gradle,java
+
+# allow jar files in libs folder
+!/libs/*.jar
