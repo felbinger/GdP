@@ -26,6 +26,8 @@ repositories {
 }
 
 dependencies {
+    implementation 'org.jetbrains:annotations:20.1.0'
+    implementation 'com.github.spotbugs:spotbugs-annotations:4.0.1'
     testImplementation(platform('org.junit:junit-bom:5.7.0'))
     testImplementation('org.junit.jupiter:junit-jupiter-api')
     testImplementation('org.mockito:mockito-junit-jupiter:3.7.0')
