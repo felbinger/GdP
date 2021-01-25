@@ -19,13 +19,12 @@ public class TreeTest {
                     any(Color.class), anyBoolean(), anyDouble(), anyDouble(), anyDouble(),
                     anyDouble(), anyDouble(), anyDouble(), anyDouble(), anyDouble()
             )).thenReturn(false);
+            mocked.when(SimpleGraphicPanel::getRandomColor).thenReturn(Color.BLACK);
 
             assertFalse(Tree.drawTree(0, 100, 40, 300, 100, 0.5));
 
-            // FIXME nullable(Color.class) should be any(Color.class)
-            //  SimpleGraphicPanel.getRandomColor() returns null -> why?
             mocked.verify(() -> SimpleGraphicPanel.drawQuadrilateral(
-                    nullable(Color.class),
+                    any(Color.class),
                     eq(true),
                     eq(100.0),
                     eq(40.0),
@@ -37,7 +36,7 @@ public class TreeTest {
                     AdditionalMatchers.eq(125.2, 0.1)
             ));
             mocked.verify(() -> SimpleGraphicPanel.drawQuadrilateral(
-                    nullable(Color.class),
+                    any(Color.class),
                     eq(true),
                     eq(300.0),
                     eq(100.0),
@@ -49,7 +48,7 @@ public class TreeTest {
                     AdditionalMatchers.eq(97.4, 0.1)
             ));
             mocked.verify(() -> SimpleGraphicPanel.drawQuadrilateral(
-                    nullable(Color.class),
+                    any(Color.class),
                     eq(true),
                     eq(240.0),
                     eq(300.0),
@@ -61,7 +60,7 @@ public class TreeTest {
                     AdditionalMatchers.eq(214.7, 0.1)
             ));
             mocked.verify(() -> SimpleGraphicPanel.drawQuadrilateral(
-                    nullable(Color.class),
+                    any(Color.class),
                     eq(true),
                     eq(40.0),
                     eq(240.0),

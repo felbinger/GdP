@@ -19,7 +19,6 @@ public final class Task2 {
         return (x % 10) + digitSum((x - (x % 10)) / 10);
     }
 
-    // FIXME 0, 0
     public static int countDigitInNumber(int digit, int number) {
         if (number < 0 || digit < 0 || digit > 9) {
             return -1;
