@@ -14,12 +14,11 @@ public class TreeTest {
 
     @Test
     public void testFlowerTree() {
-        try (MockedStatic<SimpleGraphicPanel> mocked = mockStatic(SimpleGraphicPanel.class)) {
+        try (MockedStatic<SimpleGraphicPanel> mocked = mockStatic(SimpleGraphicPanel.class, CALLS_REAL_METHODS)) {
             mocked.when(() -> SimpleGraphicPanel.drawQuadrilateral(
                     any(Color.class), anyBoolean(), anyDouble(), anyDouble(), anyDouble(),
                     anyDouble(), anyDouble(), anyDouble(), anyDouble(), anyDouble()
             )).thenReturn(false);
-            mocked.when(SimpleGraphicPanel::getRandomColor).thenReturn(Color.BLACK);
 
             assertFalse(Tree.drawTree(0, 100, 40, 300, 100, 0.5));
 
