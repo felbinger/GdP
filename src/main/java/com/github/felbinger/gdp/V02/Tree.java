@@ -1,6 +1,7 @@
 package com.github.felbinger.gdp.V02;
 
 import com.github.felbinger.gdp.V01.Flower;
+import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import edu.unibw.etti.SimpleGraphicPanel;
 
 public final class Tree {
@@ -37,7 +38,7 @@ public final class Tree {
      * Draw a tree using the Flower.drawFlower() method from the last worksheet.
      * @return whether the tree has been drawn successfully
      */
-    @edu.umd.cs.findbugs.annotations.SuppressFBWarnings("NS_DANGEROUS_NON_SHORT_CIRCUIT")
+    @SuppressFBWarnings("NS_DANGEROUS_NON_SHORT_CIRCUIT")
     public static boolean drawTree(int depth, double ax, double ay, double bx, double by, double r) {
         if (depth < 0) {
             return false;
