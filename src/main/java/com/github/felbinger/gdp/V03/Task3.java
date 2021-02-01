@@ -18,15 +18,15 @@ public final class Task3 {
             return -1;
         }
 
-        long ret = 1;
+        int ret = 1;
         for (int i = 0; i < n; i++) {
-            ret *= i + 1;
-            if (ret > Integer.MAX_VALUE) {
+            if (ret > Integer.MAX_VALUE / (i + 1)) {
                 return -1;
             }
+            ret *= i + 1;
         }
 
-        return (int) ret;
+        return ret;
     }
 
     /**
