@@ -6,8 +6,8 @@ public final class Task4 {
     }
 
     public static double getMax(double[] a) {
-        double max = 0.0;
-        if (a == null) {
+        double max = -Double.MIN_VALUE;
+        if (a == null || a.length == 0) {
             throw new IllegalArgumentException();
         }
         for (double v : a) {
@@ -19,6 +19,9 @@ public final class Task4 {
     }
 
     public static double getEvenAvg(int[] a) {
+        if (a == null || a.length == 0) {
+            throw new IllegalArgumentException();
+        }
         int sum = 0;
         int counter = 0;
         for (int v : a) {
@@ -27,15 +30,15 @@ public final class Task4 {
                 counter++;
             }
         }
+        if (counter == 0) {
+            throw new IllegalArgumentException();
+        }
         return (double) sum / counter;
     }
 
     public static char[] reverse(char[] a) {
-        if (a == null) {
+        if (a == null || a.length == 0) {
             throw new IllegalArgumentException();
-        }
-        if (a.length == 0) {
-            return a;
         }
         char[] ret = new char[a.length];
         for (int i = 0; i < a.length; i++) {

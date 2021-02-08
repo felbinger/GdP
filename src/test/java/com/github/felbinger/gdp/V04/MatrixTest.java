@@ -1,7 +1,5 @@
 package com.github.felbinger.gdp.V04;
 
-import com.github.felbinger.gdp.V01.Task1;
-import com.github.felbinger.gdp.V03.Task3;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -33,7 +31,15 @@ public class MatrixTest {
 
     static Stream<Arguments> provideIsMatrixTestArgs() {
         return Stream.of(
+                Arguments.of(false, null, 1, 1),
+                Arguments.of(false, new double[][]{{1, 2}, {3, 4}}, 0, 0),
+                Arguments.of(false, new double[][]{{1, 2}, {3, 4}}, 0, 1),
+                Arguments.of(false, new double[][]{{1, 2}, {3, 4}}, 1, 0),
+                Arguments.of(false, new double[][]{{}, {}}, 1, 1),
                 Arguments.of(true, new double[][]{{1, 2}, {3, 4}}, 2, 2),
+                Arguments.of(false, new double[][]{{1, 2}, {3, Double.NaN}}, 2, 2),
+                Arguments.of(false, new double[][]{{1, 2}, null}, 2, 2),  // FIXME
+                Arguments.of(false, new double[][]{null, {1, 2}}, 2, 2),
                 Arguments.of(true, new double[][]{{1, 2, 3}, {4, 5, 6}}, 2, 3),
                 Arguments.of(false, new double[][]{{1, 2, 3, 4}, {5, 6, 7}, {8, 9, 10}}, 2, 2),
                 Arguments.of(false, new double[][]{{1, 2, 3}, {5, 6, 7}, {8, 9, 10}}, 2, 2),
@@ -72,6 +78,14 @@ public class MatrixTest {
                 new double[][]{},
                 new double[][]{})
         );
+        assertThrows(IllegalArgumentException.class, () -> Matrix.mul(
+                null,
+                new double[][]{{}})
+        );
+        assertThrows(IllegalArgumentException.class, () -> Matrix.mul(
+                null,
+                null
+        ));
         assertThrows(IllegalArgumentException.class, () -> Matrix.mul(
                 new double[][]{{1,2},{3,4,5}},
                 new double[][]{{1,2}, {1,2}})

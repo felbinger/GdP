@@ -21,13 +21,14 @@ public class Task4Test {
     static Stream<Arguments> provideGetMaxTestArgs() {
         return Stream.of(
                 Arguments.of(7, new double[]{5,1,2,7,6,3}),
-                Arguments.of(Integer.MAX_VALUE, new double[]{1, Integer.MAX_VALUE, 2}),
-                Arguments.of(0, new double[]{})
+                Arguments.of(5, new double[]{1,5,-2}),
+                Arguments.of(Integer.MAX_VALUE, new double[]{1, Integer.MAX_VALUE, 2})
         );
     }
 
     @Test
     public void isGetMaxIllegalTest() {
+        assertThrows(IllegalArgumentException.class, () -> Task4.getMax(new double[]{}));
         assertThrows(IllegalArgumentException.class, () -> Task4.getMax(null));
     }
 
@@ -44,6 +45,12 @@ public class Task4Test {
         );
     }
 
+    @Test
+    public void getAvgEvenIllegalTest() {
+        assertThrows(IllegalArgumentException.class, () -> Task4.getEvenAvg(new int[]{}));
+        assertThrows(IllegalArgumentException.class, () -> Task4.getEvenAvg(null));
+    }
+
     @ParameterizedTest(name = "{index}: reverseTest (exp: {0}, inp: {1})")
     @MethodSource("provideReverseTestArgs")
     public void reverseTest(char[] expected, char[] input) {
@@ -52,13 +59,13 @@ public class Task4Test {
 
     static Stream<Arguments> provideReverseTestArgs() {
         return Stream.of(
-                Arguments.of(new char[]{'o', 'l', 'l', 'e', 'H'}, new char[]{'H', 'e', 'l', 'l', 'o'}),
-                Arguments.of(new char[]{}, new char[]{})
+                Arguments.of(new char[]{'o', 'l', 'l', 'e', 'H'}, new char[]{'H', 'e', 'l', 'l', 'o'})
         );
     }
 
     @Test
     public void isReverseIllegalTest() {
+        assertThrows(IllegalArgumentException.class, () -> Task4.reverse(new char[]{}));
         assertThrows(IllegalArgumentException.class, () -> Task4.reverse(null));
     }
 
@@ -71,7 +78,9 @@ public class Task4Test {
     static Stream<Arguments> provideIsSortedTestArgs() {
         return Stream.of(
                 Arguments.of(true, new long[]{1,2,3}),
-                Arguments.of(false, new long[]{3,2,1})
+                Arguments.of(false, new long[]{3,2,1}),
+                Arguments.of(true, new long[]{-23,-16,-5}),
+                Arguments.of(false, new long[]{-5,5,-1})
         );
     }
 
