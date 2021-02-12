@@ -1,14 +1,16 @@
 package com.github.felbinger.gdp;
 
-import com.github.felbinger.gdp.V01.Flower;
-import com.github.felbinger.gdp.V01.Task1;
-import com.github.felbinger.gdp.V02.Task2;
-import com.github.felbinger.gdp.V02.Tree;
-import com.github.felbinger.gdp.V03.Task3;
-import com.github.felbinger.gdp.V03.Triangle;
-import com.github.felbinger.gdp.V04.Characters;
-import com.github.felbinger.gdp.V04.Matrix;
-import com.github.felbinger.gdp.V04.Task4;
+import com.github.felbinger.gdp.worksheet1.Flower;
+import com.github.felbinger.gdp.worksheet1.Task1;
+import com.github.felbinger.gdp.worksheet2.Task2;
+import com.github.felbinger.gdp.worksheet2.Tree;
+import com.github.felbinger.gdp.worksheet3.Task3;
+import com.github.felbinger.gdp.worksheet3.Triangle;
+import com.github.felbinger.gdp.worksheet4.Characters;
+import com.github.felbinger.gdp.worksheet4.Matrix;
+import com.github.felbinger.gdp.worksheet4.Task4;
+import com.github.felbinger.gdp.worksheet5.Quicksort;
+import com.github.felbinger.gdp.worksheet5.Task5;
 
 import java.awt.Color;
 import java.util.Arrays;
@@ -64,5 +66,10 @@ public final class App {
 
         System.out.println("Task 4.3c: ");
         Matrix.printMatrix(Matrix.mul(new double[][] {{1, 2}, {3, 4}}, new double[][] {{1, 2}, {3, 4}}));
+
+        System.out.println("Task 5.1 + 5.2:");
+        Task5.main();
+        System.out.println("Task 5.3:");
+        Quicksort.main();
     }
 }
