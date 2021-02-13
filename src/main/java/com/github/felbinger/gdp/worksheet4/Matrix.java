@@ -47,8 +47,8 @@ public final class Matrix {
         }
 
         double[][] ret = new double[a.length][b[0].length];
-        for (int i = 0; i < a.length; i++) {
-            for (int j = 0; j < b[0].length; j++) {
+        for (int i = 0; i < ret.length; i++) {
+            for (int j = 0; j < ret[i].length; j++) {
                 ret[i][j] = 0;
                 for (int k = 0; k < a[0].length; k++) {
                     ret[i][j] += a[i][k] * b[k][j];

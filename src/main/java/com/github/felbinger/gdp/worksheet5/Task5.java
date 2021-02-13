@@ -53,12 +53,15 @@ public final class Task5 {
             ArrayVisualizer.add(x);
         }
 
+        boolean abort;
         for (int i = 0; i < x.length - 1; i++) {
-            boolean abort = false;
+            abort = false;
             for (int j = 0; j < x.length - i - 1; j++) {
                 compareCount++;
                 if (x[j] < x[j + 1]) {
-                    abort = true;
+                    if (!abort) {
+                        abort = true;
+                    }
                     continue;
                 }
                 ArrayVisualizer.update();

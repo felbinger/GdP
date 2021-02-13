@@ -18,7 +18,7 @@ public final class Characters {
     public static char[] replace(char[] a, char search, char replacement) {
         // copied a into local array b
         char[] b = new char[a.length];
-        for (int i = 0; i < a.length; i++) {
+        for (int i = 0; i < b.length; i++) {
             if (a[i] == search) {
                 // write replacement to array b
                 b[i] = replacement;
