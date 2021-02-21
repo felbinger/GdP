@@ -71,5 +71,7 @@ public final class App {
         Task5.main();
         System.out.println("Task 5.3:");
         Quicksort.main();
+
+        System.out.println("Task 6: checkout tests");
     }
 }
