@@ -1,11 +1,12 @@
 package com.github.felbinger.gdp.worksheet6;
 
 public final class SLLInt {
-    // SLLInt: Single Linked List
+
     @SuppressWarnings("checkstyle:visibilitymodifier")
-    public int element;
+    public transient int element;
+
     @SuppressWarnings("checkstyle:visibilitymodifier")
-    public SLLInt next;
+    public transient SLLInt next;
 
     public SLLInt(int e, SLLInt n) {
         element = e;
@@ -14,6 +15,5 @@ public final class SLLInt {
 
     public SLLInt(int e) {
         element = e;
-        next = null;
     }
 }
