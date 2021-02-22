@@ -10,13 +10,17 @@ public final class SeqByDLLOperation {
         if (seq == null || seq.head == null || seq.tail == null) {
             throw new IllegalArgumentException();
         }
-        DLLInt cur = (inverted) ? seq.tail : seq.head;
+        DLLInt cur = inverted ? seq.tail : seq.head;
         String out = Integer.toString(cur.element);
-        while (((inverted) ? cur.prev : cur.next) != null) {
-            cur = ((inverted) ? cur.prev : cur.next);
+        while ((inverted ? cur.prev : cur.next) != null) {
+            cur = inverted ? cur.prev : cur.next;
             out += String.format(":%d", cur.element);
         }
-        return out;
+        if (inverted) {
+            return String.format("(%s)<--", out);
+        } else {
+            return String.format("-->(%s)", out);
+        }
     }
 
     public static SeqByDLL insert(int value, SeqByDLL seq) {

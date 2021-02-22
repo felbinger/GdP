@@ -16,9 +16,6 @@ public final class SLLIntOperation {
 
     public static int getLength(SLLInt seq) {
         int len = 0;
-        if (seq == null) {
-            return len;
-        }
         SLLInt cur = seq;
         while (cur != null) {
             cur = cur.next;
@@ -65,7 +62,26 @@ public final class SLLIntOperation {
     }
 
     public static boolean isEqualRekursiv(SLLInt seq1, SLLInt seq2) {
-        return getString(seq1).equals(getString(seq2));
+        // kinda cheating:
+//         return getString(seq1).equals(getString(seq2));
+
+        // long version:
+//        if (seq1 == null || seq2 == null) {
+//            throw new IllegalArgumentException();
+//        }
+//        if (seq1.element != seq2.element) {
+//            return false;
+//        }
+//        if (seq1.next != null || seq2.next != null) {
+//            return isEqualIterativ(seq1, seq2);
+//        }
+//        return true;
+
+        // short version
+        if (seq1 == null || seq2 == null) {
+            throw new IllegalArgumentException();
+        }
+        return seq1.next == null || seq2.next == null || isEqualIterativ(seq1.next, seq2.next);
     }
 
     public static boolean isEqualIterativ(SLLInt seq1, SLLInt seq2) {
