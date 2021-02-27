@@ -11,6 +11,7 @@ import com.github.felbinger.gdp.worksheet4.Matrix;
 import com.github.felbinger.gdp.worksheet4.Task4;
 import com.github.felbinger.gdp.worksheet5.Quicksort;
 import com.github.felbinger.gdp.worksheet5.Task5;
+import com.github.felbinger.gdp.worksheet7.Preview;
 
 import java.awt.Color;
 import java.util.Arrays;
@@ -73,5 +74,8 @@ public final class App {
         Quicksort.main();
 
         System.out.println("Task 6: checkout tests");
+
+        System.out.println("Task 7:");
+        Preview.main();
     }
 }

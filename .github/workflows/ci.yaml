@@ -27,7 +27,7 @@ jobs:
         run: chmod +x gradlew
 
       - name: Lint with Gradle
-        run: ./gradlew checkstyleMain checkstyleTest spotbugsMain spotbugsTest pmdMain pmdTest javadoc --stacktrace --no-daemon
+        run: ./gradlew checkstyleMain checkstyleTest spotbugsMain spotbugsTest pmdMain pmdTest --stacktrace --no-daemon
 
       - name: Annotate Checkstyle Issues
         uses: jwgmeligmeyling/checkstyle-github-action@master
