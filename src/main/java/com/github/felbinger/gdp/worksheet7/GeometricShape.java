@@ -8,8 +8,8 @@ public abstract class GeometricShape {
     private Color color;
     private boolean fill;
 
-    public GeometricShape(Position pos, Color c, boolean f) {
-        this.position = pos;
+    protected GeometricShape(Position pos, Color c, boolean f) {
+        this.position = new Position(pos.getX(), pos.getY());
         this.color = c;
         this.fill = f;
     }

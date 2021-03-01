@@ -7,7 +7,6 @@ public class Position {
     public static final int X_MAX = 600;
     public static final int Y_MAX = 400;
 
-
     public Position(double x, double y) {
         setX(x);
         setY(y);
@@ -33,7 +32,7 @@ public class Position {
      * Set the x value, make sure it's between 0 and the configured X_MAX.
      * @param x value for the 2D graphic
      */
-    public void setX(double x) {
+    public final void setX(double x) {
         this.x = x < 0 ? x % X_MAX + X_MAX : x % X_MAX;
     }
 
@@ -41,7 +40,7 @@ public class Position {
      * Set the y value, make sure it's between 0 and the configured Y_MAX.
      * @param y value for the 2D graphic
      */
-    public void setY(double y) {
+    public final void setY(double y) {
         this.y = y < 0 ? y % Y_MAX + Y_MAX : y % Y_MAX;
     }
 
