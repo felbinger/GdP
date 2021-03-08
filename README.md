@@ -8,4 +8,5 @@ You can find all German worksheets in the [`worksheets`](./worksheets/) folder.
 5. [`worksheet5.pdf`](./worksheets/worksheet5.pdf)
 6. [`worksheet6.pdf`](./worksheets/worksheet6.pdf)
 7. [`worksheet7.pdf`](./worksheets/worksheet7.pdf)
+7. [`worksheet8.pdf`](./worksheets/worksheet8.pdf)
 

@@ -1,5 +1,7 @@
 package com.github.felbinger.gdp.worksheet7;
 
+import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
+
 import java.awt.Color;
 import java.awt.Graphics;
 
@@ -11,6 +13,7 @@ public class Snow {
         this(5000, r, g);
     }
 
+    @SuppressFBWarnings({"DM_NEXTINT_VIA_NEXTDOUBLE", "URF_UNREAD_FIELD"})
     public Snow(int amount, double r, Graphics g) {
         this.radius = r;
         this.graphics = g;
